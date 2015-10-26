@@ -99,7 +99,7 @@ define([
                  '<div class="modal-content">' +
                    (title ?
                    '<div class="modal-header">' +
-                     '<button type="button" class="close" aria-hidden="true" tabindex="-1">&times;</button>' +
+                     '<button type="button" class="close" aria-hidden="true" tabindex="-1"></button>' +
                      '<h4 class="modal-title">' + title + '</h4>' +
                    '</div>' : ''
                    ) +
@@ -642,8 +642,10 @@ define([
         }
 
         var body = '<div class="form-group row note-group-select-from-files">' +
-                     '<label>' + lang.image.selectFromFiles + '</label>' +
-                     '<input class="note-image-input form-control" type="file" name="files" accept="image/*" multiple="multiple" />' +
+                    '<div class="photo-upload-browse btn btn-default">' +                     
+                    '<span>' + lang.image.selectFromFiles + '</span>' +
+                    '<input class="note-image-input file photo-browse-input form-control" type="file" name="files" accept="image/*" multiple="multiple" /></div>' +
+
                      imageLimitation +
                    '</div>' +
                    '<div class="form-group row">' +
