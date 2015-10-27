@@ -6613,6 +6613,7 @@
         }
 
         var body = '<div class="form-group row note-group-select-from-files">' +
+                     '<div class="photo-upload-browse btn btn-default">' + 
                      '<span>' + lang.image.selectFromFiles + '</span>' +
                      '<input class="note-image-input file photo-browse-input form-control" type="file" name="files" accept="image/*" multiple="multiple" /></div>' +
                      imageLimitation +
