@@ -5274,6 +5274,10 @@
           bindEnterKey($linkText, $linkBtn);
 
           $openInNewWindow.prop('checked', linkInfo.isNewWindow);
+          // enable linkBtn when checkbox selection change
+          $openInNewWindow.on('change', function() {
+              toggleBtn($linkBtn, $linkText.val() && $linkUrl.val()); 
+          });
 
           $linkBtn.one('click', function (event) {
             event.preventDefault();
