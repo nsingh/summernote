@@ -5262,7 +5262,7 @@
           }
 
           $linkUrl.on('input', function () {
-            toggleBtn($linkBtn, $linkText.val() && $linkUrl.val());
+            toggleBtn($linkBtn, $linkUrl.val());
             // display same link on `Text to display` input
             // when create a new link
             if (!linkInfo.text) {
