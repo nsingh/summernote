@@ -78,7 +78,7 @@ define([
           $openInNewWindow.prop('checked', linkInfo.isNewWindow);
           // enable linkBtn when checkbox selection change
           $openInNewWindow.on('change', function() {
-              toggleBtn($linkBtn, $linkUrl.val() && ($linkUrl.val() !== 'http://'));
+              toggleBtn($linkBtn, $linkText.val() && $linkUrl.val()); 
           });
 
           $linkBtn.one('click', function (event) {
