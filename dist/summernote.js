@@ -5251,8 +5251,8 @@
           $linkText.on('input', function () {
             toggleBtn($linkBtn, $linkText.val() && $linkUrl.val());
             // if linktext was modified by keyup,
-            // stop cloning text from linkUrl
-            linkInfo.text = $linkText.val();
+            // stop cloning text from linkUrl            
+            linkInfo.text = $("<div/>").text($linkText.val()).html();            
           });
 
           // if no url was given, copy text to url
@@ -5280,8 +5280,8 @@
 
             deferred.resolve({
               range: linkInfo.range,
-              url: $linkUrl.val(),
-              text: $linkText.val(),
+              url: encodeURIComponent($linkUrl.val()),
+              text: $("<div/>").text($linkText.val()).html(),
               isNewWindow: $openInNewWindow.is(':checked')
             });
             $linkDialog.modal('hide');
