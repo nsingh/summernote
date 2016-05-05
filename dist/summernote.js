@@ -5280,7 +5280,7 @@
 
             deferred.resolve({
               range: linkInfo.range,
-              url:  $("<div/>").text($linkUrl.val()).html(),
+              url: encodeURI($linkUrl.val()),
               text: $("<div/>").text($linkText.val()).html(),
               isNewWindow: $openInNewWindow.is(':checked')
             });
