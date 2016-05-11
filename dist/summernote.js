@@ -3911,6 +3911,7 @@
         range.createFromNodeAfter($image[0]).select();
         afterCommand($editable);
       }).fail(function () {
+
         var $holder = dom.makeLayoutInfo($editable).holder();
         handler.bindCustomEvent(
           $holder, $editable.data('callbacks'), 'image.upload.error'
@@ -5559,7 +5560,7 @@
         $.each(files, function (idx, file) {
           var filename = file.name;
           if (options.maximumImageFileSize && options.maximumImageFileSize < file.size) {
-            bindCustomEvent($holder, callbacks, 'image.upload.error')(options.langInfo.image.maximumFileSizeError);
+            bindCustomEvent($holder, callbacks, 'image.size.error')(options.langInfo.image.maximumFileSizeError);
           } else {
             async.readFileAsDataURL(file).then(function (sDataURL) {
               modules.editor.insertImage($editable, sDataURL, filename);
@@ -5886,6 +5887,7 @@
         onChange: options.onChange,
         onImageUpload: options.onImageUpload,
         onImageUploadError: options.onImageUploadError,
+        onImageSizeError: options.onImageSizeError,
         onMediaDelete: options.onMediaDelete,
         onToolbarClick: options.onToolbarClick
       });
